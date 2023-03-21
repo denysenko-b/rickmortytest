@@ -1,0 +1,180 @@
+:root {
+    font-family: "Roboto", sans-serif;
+    --big-font-size: 1.25rem;
+    --tiny-font-size: 0.875rem;
+
+    --black: #081f32;
+    --gray: #8e8e93;
+    --gray-light: #f2f2f7;
+    --character-grid-columns: 4;
+    --container-padding: 210px;
+
+    --404-size: 16rem;
+}
+
+html {
+    font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+span {
+    color: var(--black);
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+h2,
+h3 {
+    font-size: var(--big-font-size);
+}
+
+h2 {
+    font-weight: 500;
+}
+
+button {
+    font-family: "Karla", sans-serif;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: var(--gray-light);
+    }
+
+    transition: all ease 0.2s;
+}
+
+.tiny-text {
+    font-weight: 400;
+    color: var(--gray);
+    font-size: var(--tiny-font-size);
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    margin: 0 var(--container-padding);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    padding-bottom: 5rem;
+}
+
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--character-grid-columns), 1fr);
+    column-gap: 20px;
+    row-gap: 24px;
+
+    &-messages {
+        margin-top: 2rem;
+
+        h3 {
+            color: var(--gray);
+        }
+    }
+}
+
+@media (min-width: 1680px) {
+    :root {
+        --character-grid-columns: 5;
+    }
+}
+
+@media (max-width: 1260px) {
+    :root {
+        --character-grid-columns: 3;
+    }
+}
+
+@media (max-width: 1060px) {
+    :root {
+        --container-padding: 150px;
+    }
+}
+
+@media (max-width: 935px) {
+    :root {
+        --character-grid-columns: 2;
+    }
+}
+
+@media (max-width: 725px) {
+    :root {
+        --container-padding: 75px;
+    }
+}
+
+@media (max-width: 575px) {
+    :root {
+        --container-padding: 24px;
+    }
+
+    .login-button {
+        &.loggedon {
+            span {
+                display: none;
+            }
+
+            &:after {
+                display: block;
+            }
+        }
+    }
+}
+
+@media (max-width: 471px) {
+    :root {
+        --character-grid-columns: 1;
+    }
+}
+
+@media (max-width: 420px) {
+    header {
+        padding: 1.5rem;
+        margin-bottom: 5rem;
+    }
+
+    .character-info {
+        &__avatar {
+            width: 50%;
+            height: auto;
+            aspect-ratio: 1/1;
+        }
+
+        &__name {
+            font-size: 2rem;
+        }
+
+        &__details {
+            h2 {
+                text-align: left;
+                margin: 2rem 0 1rem;
+            }
+        }
+    }
+
+    .login {
+        &-form {
+            &__inner {
+                width: 100%;
+                padding: 3rem 0;
+            }
+        }
+    }
+}

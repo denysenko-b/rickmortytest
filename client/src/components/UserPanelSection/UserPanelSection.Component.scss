@@ -1,0 +1,14 @@
+.user-panel-section {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+
+    height: 2.5rem;
+
+    &__icon {
+        height: 2.5rem;
+        width: 2.5rem;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+}

@@ -1,0 +1,48 @@
+.search-bar {
+    width: 100%;
+
+    display: flex;
+
+    position: relative;
+
+    margin: 1rem 0 3rem;
+
+    &__input {
+        all: unset;
+        width: 100%;
+        background-image: url(../../assets/search.svg);
+        background-repeat: no-repeat;
+        background-position: 1rem 1.125rem;
+        background-size: 1.125rem;
+
+        border: 1px solid var(--gray);
+        border-radius: 8px;
+
+        padding: 1rem;
+        padding-left: 2.5rem;
+    }
+
+    &__input.loading {
+        background-image: none;
+    }
+
+    &__spinner {
+        width: 1rem;
+        height: 1rem;
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 4V9H19.418M19.418 9C18.7542 7.35813 17.5643 5.98291 16.035 5.08986C14.5056 4.19682 12.7232 3.83642 10.967 4.06514C9.21086 4.29387 7.58021 5.0988 6.33063 6.35378C5.08105 7.60876 4.28315 9.24287 4.062 11M19.418 9H15M4 20V15H4.581M4.581 15C5.24581 16.6409 6.43597 18.0151 7.96517 18.9073C9.49436 19.7995 11.2763 20.1595 13.0319 19.9309C14.7875 19.7022 16.4178 18.8979 17.6675 17.6437C18.9171 16.3896 19.7156 14.7564 19.938 13M4.581 15H9' stroke='%23757575'/%3E%3C/svg%3E%0A");
+        background-size: contain;
+        animation: spin 1s infinite linear;
+        position: absolute;
+        top: 1.125rem;
+        left: 1.1rem;
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+}
