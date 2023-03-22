@@ -41,7 +41,7 @@ jobs:
             - name: Deploy backend
               uses: burnett01/rsync-deployments@5.2.1
               with:
-                switches: --archive --compress --delete
+                switches: -archive -compress -delete
                 path: server/*
                 remote_path: ${{ secrets.deploy_server_path }}
                 remote_host: ${{ secrets.host }}
