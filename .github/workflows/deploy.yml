@@ -45,7 +45,7 @@ jobs:
               with:
                 host: 146.59.18.130
                 username: pq
-                key_path: $HOME/.ssh/key
+                key: ${{ secrets.key }}
                 script: |
                   cd /var/www/api.rickmortytraineetestcase.pp.ua/
                   npm i
