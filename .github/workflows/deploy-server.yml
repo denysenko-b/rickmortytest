@@ -1,9 +1,11 @@
-name: Deploy
+name: Deploy Server
 
 on:
     push:
         branches:
             - main
+        paths:
+            - "server/**"
 
 jobs:
     deploy:
@@ -12,31 +14,6 @@ jobs:
         steps:
             - name: Checkout repo
               uses: actions/checkout@v2
-
-            - name: Setup Node
-              uses: actions/setup-node@v3
-              with:
-                  node-version: 18
-
-            - name: Install dependencies
-              run: |
-                  cd client
-                  npm i
-
-            - name: Build React app
-              run: |
-                  cd client
-                  CI=false npm run build
-
-            - name: Deploy frontent
-              uses: burnett01/rsync-deployments@5.2.1
-              with:
-                switches: --archive --compress --delete
-                path: client
-                remote_path: ${{ secrets.deploy_client_path }}
-                remote_host: ${{ secrets.host }}
-                remote_user: ${{ secrets.username }}
-                remote_key: ${{ secrets.key }}
 
             - name: Deploy backend
               uses: burnett01/rsync-deployments@5.2.1
