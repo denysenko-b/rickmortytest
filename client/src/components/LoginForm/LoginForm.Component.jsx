@@ -51,7 +51,7 @@ const LoginForm = () => {
                                 alt=""
                                 className="login-form__button-icon"
                             />
-                            Google
+                            {provider}
                         </button>
                     ))}
                 </div>
