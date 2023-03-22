@@ -12,7 +12,7 @@ import CharacterProfile, {
 import CharactersList from "./routes/CharactersList/CharactersList";
 import UserProfile from './routes/UserProfile';
 
-import ErrorPage from "./routes/ErrorPage";
+import ErrorPage from "./routes/ErrorPage/ErrorPage";
 
 import { store } from "./redux/store";
 import { Provider } from "react-redux";

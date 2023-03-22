@@ -1,0 +1,47 @@
+#error-page {
+
+    --big-letter-size: 15rem;
+    padding: 0 var(--container-padding);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    flex: 1;
+
+    .notfound {
+
+        &-title {
+            display: flex;
+
+            font-size: var(--big-letter-size);
+
+            &__zero {
+                height: var(--big-letter-size);
+            }
+        }
+
+        &-about {
+            text-align: center;
+        }
+    }
+}
+
+
+@media (max-width: 800px) {
+    #error-page {
+        --big-letter-size: 10rem;
+    }
+}
+
+
+@media (max-width: 440px) {
+    #error-page {
+        --big-letter-size: 7rem;
+
+        .notfound-about {
+            font-size: 1rem;
+        }
+    }
+}

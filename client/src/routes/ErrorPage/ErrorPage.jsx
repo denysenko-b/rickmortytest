@@ -1,7 +1,9 @@
 import { useRouteError } from "react-router-dom";
-import sunImage from "../assets/sun.jpg";
+import sunImage from "../../assets/sun.jpg";
 
-import Header from "../components/Header/Header.Component";
+import Header from "../../components/Header/Header.Component";
+
+import "./ErrorPage.Style.scss";
 
 const ErrorPage = () => {
     const error = useRouteError();
