@@ -22,31 +22,38 @@ jobs:
               run: |
                   cd client
                   npm i
+
             - name: Build React app
               run: |
                   cd client
                   CI=false npm run build
-            - name: Setup key
-              run: |
-                  set -eu
-                  mkdir "$HOME/.ssh"
-                  echo "${{ secrets.key }}" > "$HOME/.ssh/key"
-                  chmod 600 "$HOME/.ssh/key"
+
             - name: Deploy frontent
-              run: |
-                  cd client/dist
-                  rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . pq@146.59.18.130:/var/www/rickmortytraineetestcase.pp.ua/html/
+              uses: burnett01/rsync-deployments@5.2.1
+              with:
+                switches: --archive --compress --delete
+                path: client
+                remote_path: ${{ secrets.deploy_client_path }}
+                remote_host: ${{ secrets.host }}
+                remote_user: ${{ secrets.username }}
+                remote_key: ${{ secrets.key }}
+
             - name: Deploy backend
-              run: |
-                  cd server
-                  rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . pq@146.59.18.130:/var/www/api.rickmortytraineetestcase.pp.ua/
-            - name: Run server
+              uses: burnett01/rsync-deployments@5.2.1
+              with:
+                switches: --archive --compress --delete
+                path: server
+                remote_path: ${{ secrets.deploy_server_path }}
+                remote_host: ${{ secrets.host }}
+                remote_user: ${{ secrets.username }}
+                remote_key: ${{ secrets.key }}
+
+            - name: Run backend
               uses: appleboy/ssh-action@master
               with:
-                host: 146.59.18.130
-                username: pq
+                host: ${{ secrets.host }}
+                username: ${{ secrets.username }}
                 key: ${{ secrets.key }}
                 script: |
-                  cd /var/www/api.rickmortytraineetestcase.pp.ua/
+                  cd ${{ secrets.deploy_server_path }}
                   npm i
-                  npm start
