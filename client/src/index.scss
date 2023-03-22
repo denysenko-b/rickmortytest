@@ -11,7 +11,7 @@
 
     --404-size: 16rem;
 
-    --max-width: 1580px;
+    --max-width: calc(1580px + var(--container-padding) * 2);
 }
 
 html {
@@ -68,15 +68,14 @@ button {
 }
 
 .container {
-    margin: 0 var(--container-padding);
+    width: 100%;
+    max-width: var(--max-width);
+
+    padding: 0 var(--container-padding) 5rem;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
     flex-direction: column;
-
-    padding-bottom: 5rem;
-
-    max-width: var(--max-width);
 }
