@@ -39,4 +39,13 @@ jobs:
             - name: Deploy backend
               run: |
                   cd server
-                  rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . pq@146.59.18.130:/var/www/api.rickmortytraineetestcase.pp.ua/html/
+                  rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . pq@146.59.18.130:/var/www/api.rickmortytraineetestcase.pp.ua/
+            - name: Run server
+              uses: appleboy/ssh-action@master
+              with:
+                host: 146.59.18.130
+                username: pq
+                script: |
+                  cd /var/www/api.rickmortytraineetestcase.pp.ua/
+                  npm i
+                  npm start
