@@ -25,7 +25,7 @@ jobs:
                 remote_user: ${{ secrets.username }}
                 remote_key: ${{ secrets.key }}
 
-            - name: Run backend
+            - name: Setup backend
               uses: appleboy/ssh-action@master
               with:
                 host: ${{ secrets.host }}
