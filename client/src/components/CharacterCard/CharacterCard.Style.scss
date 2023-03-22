@@ -26,7 +26,8 @@
 
     &:hover {
         background-color: var(--gray-light);
+        transform: scale(1.1);
     }
 
-    transition: background-color ease 0.2s;
+    transition: all ease 0.2s;
 }
