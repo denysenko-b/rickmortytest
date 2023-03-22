@@ -34,7 +34,7 @@ jobs:
               uses: burnett01/rsync-deployments@5.2.1
               with:
                   switches:  -avzr --delete
-                  path: client/*
+                  path: client/dist/*
                   remote_path: ${{ secrets.deploy_client_path }}
                   remote_host: ${{ secrets.host }}
                   remote_user: ${{ secrets.username }}
