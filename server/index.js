@@ -30,18 +30,16 @@ app.use(
 );
 
 app.use("/auth", authRoute);
+app.get('/', (req, res) => {
+    res.send("I love you");
+})
 
 app.listen(process.env.PORT, () => {
     console.log("Server is running!");
 });
 
 mongoose
-    .connect(process.env.DB, {
-        // useNewUrlParser: true,
-        // useUnifiedTopology: true,
-        // useFindAndModify: false,
-        // useCreateIndex: true,
-    })
+    .connect(process.env.DB)
     .then(() => {
         console.log("Connected to MongoDB database");
     })
