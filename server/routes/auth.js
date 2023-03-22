@@ -1,8 +1,6 @@
 const router = require("express").Router();
 const passport = require("passport");
 
-require("dotenv").config();
-
 const failureRedirect = process.env.API_URL + "/auth/login/failed";
 
 router.get("/login/success", (req, res) => {

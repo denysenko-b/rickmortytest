@@ -7,8 +7,6 @@ const User = require("./models/user.model");
 
 const passport = require("passport");
 
-require("dotenv").config();
-
 const getCallbackUrl = (provider) =>
     `${process.env.API_URL}/auth/${provider}/callback`;
 

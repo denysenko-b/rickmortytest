@@ -2,6 +2,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { openLoginForm } from "../../redux/loginFormSlice";
 import { logout } from "../../redux/userAuthSlice";
 
+import './LoginButton.Style.scss';
+
 const LoginButton = () => {
     const loggedOn = useSelector((state) => state.userAuth.loggedOn);
     const openedForm = useSelector((state) => state.loginForm.opened);

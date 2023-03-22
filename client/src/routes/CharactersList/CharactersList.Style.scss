@@ -1,0 +1,57 @@
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--character-grid-columns), 1fr);
+    column-gap: 20px;
+    row-gap: 24px;
+
+    &-messages {
+        margin-top: 2rem;
+
+        h3 {
+            color: var(--gray);
+        }
+    }
+}
+
+
+@media (min-width: 1680px) {
+    :root {
+        --character-grid-columns: 5;
+    }
+}
+
+@media (max-width: 1260px) {
+    :root {
+        --character-grid-columns: 3;
+    }
+}
+
+@media (max-width: 1060px) {
+    :root {
+        --container-padding: 150px;
+    }
+}
+
+@media (max-width: 935px) {
+    :root {
+        --character-grid-columns: 2;
+    }
+}
+
+@media (max-width: 725px) {
+    :root {
+        --container-padding: 75px;
+    }
+}
+
+@media (max-width: 575px) {
+    :root {
+        --container-padding: 24px;
+    }
+}
+
+@media (max-width: 471px) {
+    :root {
+        --character-grid-columns: 1;
+    }
+}

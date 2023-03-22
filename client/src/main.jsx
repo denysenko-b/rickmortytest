@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import "./reset.scss";
+import './reset.scss';
 import "./index.scss";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -9,7 +9,7 @@ import Root from "./routes/Root";
 import CharacterProfile, {
     loader as characterInfoPageLoader,
 } from "./routes/CharacterProfile";
-import CharactersList from "./routes/CharactersList";
+import CharactersList from "./routes/CharactersList/CharactersList";
 import UserProfile from './routes/UserProfile';
 
 import ErrorPage from "./routes/ErrorPage";

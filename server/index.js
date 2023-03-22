@@ -8,8 +8,6 @@ const authRoute = require("./routes/auth");
 const app = express();
 const mongoose = require("mongoose");
 
-require("dotenv").config();
-
 app.use(
     session({
         secret: "rickmortytest",

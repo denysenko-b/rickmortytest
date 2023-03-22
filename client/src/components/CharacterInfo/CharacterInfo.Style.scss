@@ -45,3 +45,24 @@
         }
     }
 }
+
+@media (max-width: 420px) {
+    .character-info {
+        &__avatar {
+            width: 50%;
+            height: auto;
+            aspect-ratio: 1/1;
+        }
+
+        &__name {
+            font-size: 2rem;
+        }
+
+        &__details {
+            h2 {
+                text-align: left;
+                margin: 2rem 0 1rem;
+            }
+        }
+    }
+}

@@ -1,5 +1,4 @@
 .login-button {
-    margin-left: 1rem;
 
     &:after {
         content: "";
@@ -8,5 +7,19 @@
         height: 1.5rem;
         background-image: url("../..//assets/logout.svg");
         background-size: contain;
+    }
+}
+
+@media (max-width: 575px) {
+    .login-button {
+        &.loggedon {
+            span {
+                display: none;
+            }
+
+            &:after {
+                display: block;
+            }
+        }
     }
 }

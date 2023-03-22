@@ -1,11 +1,13 @@
 import { useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
-import CharacterCard from "../components/CharacterCard/CharacterCard.Component";
+import CharacterCard from "../../components/CharacterCard/CharacterCard.Component";
 
-import mainPhoto from "../assets/main_photo.png";
-import SearchBar from "../components/SearchBar/SearchBar.Component";
-import useCharacters from "../hooks/useCharacters";
+import mainPhoto from "../../assets/main_photo.png";
+import SearchBar from "../../components/SearchBar/SearchBar.Component";
+import useCharacters from "../../hooks/useCharacters";
+
+import './CharactersList.Style.scss';
 
 const saveQuery = (query) => localStorage.setItem("query", query);
 

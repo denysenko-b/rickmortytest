@@ -3,6 +3,7 @@ header {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    max-width: calc(var(--max-width) + 6rem);
 
     padding: 1.5rem 3rem;
     margin-bottom: 0.5rem;
@@ -14,5 +15,18 @@ header {
         span {
             margin-left: 0.75rem;
         }
+    }
+}
+
+@media (max-width: 575px) {
+    header {
+        padding: 1.5rem var(--container-padding);
+    }
+}
+
+@media (max-width: 420px) {
+    header {
+        padding: 1.5rem;
+        margin-bottom: 5rem;
     }
 }
